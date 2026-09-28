@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-28T20:30:00+02:00",
+  "title": "Design System: Momo's Barbershop",
+  "extensions": {
+    "colorMeta": {
+      "brass": { "role": "primary", "displayName": "Barber Brass", "tonalRamp": ["#f3e6cc", "#e7cc9c", "#d8b67e", "#b8945a", "#8a6c3c"] },
+      "ink": { "role": "neutral", "displayName": "Marble Black", "tonalRamp": ["#3a3a3f", "#26262a", "#19191c", "#0f0f11", "#08080a"] },
+      "cape": { "role": "neutral", "displayName": "Cape White", "tonalRamp": ["#ffffff", "#f7f5f1", "#f2efe9", "#e3dfd6", "#c9c4b9"] },
+      "red": { "role": "secondary", "displayName": "Pole Red", "tonalRamp": ["#e5565b", "#c83a40", "#b3262c", "#8c1c21", "#5e1216"] },
+      "navy": { "role": "tertiary", "displayName": "Pole Navy", "tonalRamp": ["#3a4a7a", "#22305a", "#172243", "#101832", "#0a1022"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Ultra display", "purpose": "Section headings and panel titles, like painted sign lettering." },
+      "logotype": { "displayName": "Rye logotype", "purpose": "Only the nav word mark and the seal centre, echoing the logo." },
+      "label": { "displayName": "Condensed caps", "purpose": "Labels, hours, buttons, captions." },
+      "number": { "displayName": "Condensed numerals", "purpose": "Phone numbers and hours, tabular figures." },
+      "body": { "displayName": "Barlow body", "purpose": "Reading text." }
+    },
+    "shadows": [
+      { "name": "logo-lift", "value": "drop-shadow(0 22px 40px rgba(0,0,0,.55))", "purpose": "Logo badge floating over the hero video." },
+      { "name": "card-long", "value": "0 34px 70px -30px rgba(0,0,0,.6)", "purpose": "Menu card on the navy field." },
+      { "name": "seal", "value": "drop-shadow(0 14px 24px rgba(15,15,17,.35))", "purpose": "Seal overlapping the shop photo." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Entrances, reveals, press feedback." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "On-screen movement: frame drawing, fade guide band." },
+      { "name": "ease-drawer", "value": "cubic-bezier(0.32, 0.72, 0, 1)", "purpose": "Mobile booking dock." },
+      { "name": "press", "value": "transform 160ms ease-out; scale(.97)", "purpose": "Every pressable control." },
+      { "name": "pole-crawl", "value": "3.2s linear infinite", "purpose": "Barber-pole seam; off under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "phone", "value": "760px" },
+      { "name": "compact", "value": "1099px" },
+      { "name": "nav-tight", "value": "1180px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Brass booking action (Reserva por WhatsApp).",
+      "html": "<a class=\"ds-btn\">Reserva por WhatsApp</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;min-height:50px;padding:0 1.3em;background:#d8b67e;color:#0f0f11;font:800 1.02rem/1 'Barlow Condensed',sans-serif;letter-spacing:.09em;text-transform:uppercase;border-radius:2px;text-decoration:none;transition:transform 160ms cubic-bezier(.23,1,.32,1),background-color 200ms ease}.ds-btn:hover{background:#e7cc9c}.ds-btn:active{transform:scale(.97)}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action on dark or red fields (Llamar).",
+      "html": "<a class=\"ds-btn-line\">Llamar</a>",
+      "css": ".ds-btn-line{display:inline-flex;align-items:center;min-height:50px;padding:0 1.3em;background:#0f0f11;color:#f2efe9;border:2px solid #f2efe9;font:800 1.02rem/1 'Barlow Condensed',sans-serif;letter-spacing:.09em;text-transform:uppercase;border-radius:2px}"
+    },
+    {
+      "name": "Stamp",
+      "kind": "chip",
+      "refersTo": "stamp",
+      "description": "Rubber-stamp status (Cerrado, se va al lavar).",
+      "html": "<span class=\"ds-stamp\">Cerrado</span>",
+      "css": ".ds-stamp{display:inline-block;padding:2px 8px;border:2px solid currentColor;color:#b3262c;font:800 .82rem 'Barlow Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;transform:rotate(-4deg)}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed ink bar with condensed caps links.",
+      "html": "<nav class=\"ds-nav\"><a>Servicios</a><a>Trabajos</a><a>Dónde</a></nav>",
+      "css": ".ds-nav{display:flex;gap:24px;padding:20px 24px;background:#0f0f11;border-bottom:1px solid rgba(216,182,126,.4)}.ds-nav a{font:700 .98rem 'Barlow Condensed',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#f2efe9}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The shop's counter poster",
+    "overview": "A printed bill in the shop's own colours: logo black and gold, barber-pole red and navy, cape white. Double rules frame every block, condensed capitals label every fact, stamps mark states. The first screen is useful: live hours, phone, WhatsApp and directions around the logo, over a looping clipper video.",
+    "keyCharacteristics": ["One colour field per section", "6px double rules", "Ultra slab headings", "Condensed caps labels", "Real shop photography", "Rubber stamps for status"],
+    "rules": [
+      { "name": "One field per section", "body": "Each section owns one ground colour from the five.", "section": "colors" },
+      { "name": "Gold is never text on white", "body": "Use red or navy on cape and brass grounds.", "section": "colors" },
+      { "name": "No kickers", "body": "Headings stand alone; labels only name fields inside panels.", "section": "typography" }
+    ],
+    "dos": ["Keep open status, phone and WhatsApp in the first screen", "Use real photos of the shop"],
+    "donts": ["Invent prices or services", "Warm cream grounds, gradient text, glass, pills"]
+  }
+}

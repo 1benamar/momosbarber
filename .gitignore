@@ -1,0 +1,12 @@
+# Originales de fotos y reels (la web usa las versiones de assets/img y assets/video)
+assets/photos/
+
+# Configuración local
+.claude/
+.impeccable/review/
+.impeccable/build/
+.impeccable/mocks/
+
+# Sistema
+.DS_Store
+Thumbs.db
