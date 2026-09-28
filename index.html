@@ -24,10 +24,10 @@
   <link rel="preload" href="assets/fonts/ultra-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/img/logo-momos.webp" as="image" type="image/webp">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/logo-momos-400.webp 400w, assets/img/logo-momos.webp 900w" imagesizes="(max-width: 760px) 64vw, 350px" fetchpriority="high">
   <link rel="preload" href="assets/img/poster-corte-degradado.webp" as="image" type="image/webp">
 
-  <link rel="stylesheet" href="styles.css?v=20260928g">
+  <link rel="stylesheet" href="styles.css?v=20260928h">
   <script>document.documentElement.classList.add("js");</script>
 
   <script type="application/ld+json">
@@ -97,7 +97,7 @@
 <header class="nav" data-nav>
   <div class="nav__inner">
     <a class="nav__brand" href="#top" aria-label="Momo's Barbershop, inicio">
-      <img src="assets/img/logo-momos.webp" alt="" width="40" height="40">
+      <img src="assets/img/logo-momos-400.webp" alt="" width="40" height="40">
       <span class="nav__word">Momo's</span>
     </a>
     <nav class="nav__links" id="menu" aria-label="Secciones">
@@ -138,12 +138,14 @@
     <div class="hero__media" aria-hidden="true">
       <video class="hero__video is-active" data-clip="0" muted playsinline autoplay loop preload="auto"
              poster="assets/img/poster-corte-degradado.webp">
-        <source src="assets/video/corte-degradado-1080.mp4" type="video/mp4" media="(min-width: 900px)">
+        <source src="assets/video/corte-degradado-1080.mp4" type="video/mp4" media="(min-width: 1400px)">
+        <source src="assets/video/corte-degradado-720.mp4" type="video/mp4" media="(min-width: 761px)">
         <source src="assets/video/corte-degradado-540.mp4" type="video/mp4">
       </video>
       <video class="hero__video" data-clip="1" muted playsinline loop preload="none"
              poster="assets/img/poster-maquina-nuca.webp">
-        <source src="assets/video/maquina-nuca-1080.mp4" type="video/mp4" media="(min-width: 900px)">
+        <source src="assets/video/maquina-nuca-1080.mp4" type="video/mp4" media="(min-width: 1400px)">
+        <source src="assets/video/maquina-nuca-720.mp4" type="video/mp4" media="(min-width: 761px)">
         <source src="assets/video/maquina-nuca-540.mp4" type="video/mp4">
       </video>
       <div class="hero__shade"></div>
@@ -171,7 +173,7 @@
 
       <!-- Emblema -->
       <div class="hero__center">
-        <img class="hero__logo" src="assets/img/logo-momos.webp" width="900" height="900"
+        <img class="hero__logo" src="assets/img/logo-momos.webp" srcset="assets/img/logo-momos-400.webp 400w, assets/img/logo-momos.webp 900w" sizes="(max-width: 760px) 64vw, 350px" fetchpriority="high" width="900" height="900"
              alt="Logotipo de Momo's Barbershop: barbudo con gafas de sol entre dos tijeras, con Cuts &amp; Shaves">
         <h1 class="ribbon" id="hero-title">
           <span class="visually-hidden">Momo's Barbershop, </span>
@@ -216,12 +218,6 @@
         </a>
       </aside>
     </div>
-
-    <button class="hero__pause" type="button" aria-pressed="false" data-video-toggle>
-      <svg class="ico ico--pause" aria-hidden="true"><use href="#i-pause"/></svg>
-      <svg class="ico ico--play" aria-hidden="true"><use href="#i-play"/></svg>
-      <span class="visually-hidden" data-video-label>Pausar vídeo</span>
-    </button>
   </section>
 
   <!-- ============ TICKET: corta por aquí ============ -->
@@ -338,15 +334,15 @@
       </header>
 
       <div class="work-grid">
-        <figure class="shot"><div class="shot__frame"><img src="assets/img/degradado-perfil.webp" width="1000" height="1333" loading="lazy" decoding="async" alt="Cliente de perfil con un degradado recién hecho en Momo&#39;s"></div><figcaption data-i18n="cap.fade">Degradado y contorno</figcaption></figure>
-        <figure class="shot"><div class="shot__frame"><img src="assets/img/degradado-con-raya.webp" width="1000" height="1333" loading="lazy" decoding="async" alt="Degradado con raya marcada a cuchilla visto de lado"></div><figcaption data-i18n="cap.part">Degradado con raya</figcaption></figure>
-        <figure class="shot"><div class="shot__frame"><img src="assets/img/nino-color.webp" width="1000" height="1333" loading="lazy" decoding="async" alt="Barbero sonriendo mientras peina a un niño con el pelo pintado de amarillo con spray"></div><figcaption data-i18n="cap.spray">Color en spray, se va al lavar</figcaption></figure>
-        <figure class="shot"><div class="shot__frame"><img src="assets/img/color-y-dibujo.webp" width="1000" height="1777" loading="lazy" decoding="async" alt="Niño de espaldas con el pelo pintado de rojo y un dibujo marcado a cuchilla"></div><figcaption data-i18n="cap.design">Color y dibujo a cuchilla</figcaption></figure>
+        <figure class="shot"><div class="shot__frame"><img src="assets/img/degradado-perfil.webp" srcset="assets/img/degradado-perfil-520.webp 520w, assets/img/degradado-perfil.webp 1000w" sizes="(max-width: 760px) 46vw, (max-width: 1099px) 30vw, 400px" width="1000" height="1333" loading="lazy" decoding="async" alt="Cliente de perfil con un degradado recién hecho en Momo&#39;s"></div><figcaption data-i18n="cap.fade">Degradado y contorno</figcaption></figure>
+        <figure class="shot"><div class="shot__frame"><img src="assets/img/degradado-con-raya.webp" srcset="assets/img/degradado-con-raya-520.webp 520w, assets/img/degradado-con-raya.webp 1000w" sizes="(max-width: 760px) 46vw, (max-width: 1099px) 30vw, 400px" width="1000" height="1333" loading="lazy" decoding="async" alt="Degradado con raya marcada a cuchilla visto de lado"></div><figcaption data-i18n="cap.part">Degradado con raya</figcaption></figure>
+        <figure class="shot"><div class="shot__frame"><img src="assets/img/nino-color.webp" srcset="assets/img/nino-color-520.webp 520w, assets/img/nino-color.webp 1000w" sizes="(max-width: 760px) 46vw, (max-width: 1099px) 30vw, 400px" width="1000" height="1333" loading="lazy" decoding="async" alt="Barbero sonriendo mientras peina a un niño con el pelo pintado de amarillo con spray"></div><figcaption data-i18n="cap.spray">Color en spray, se va al lavar</figcaption></figure>
+        <figure class="shot"><div class="shot__frame"><img src="assets/img/color-y-dibujo.webp" srcset="assets/img/color-y-dibujo-520.webp 520w, assets/img/color-y-dibujo.webp 1000w" sizes="(max-width: 760px) 46vw, (max-width: 1099px) 30vw, 400px" width="1000" height="1777" loading="lazy" decoding="async" alt="Niño de espaldas con el pelo pintado de rojo y un dibujo marcado a cuchilla"></div><figcaption data-i18n="cap.design">Color y dibujo a cuchilla</figcaption></figure>
         <figure class="shot"><div class="shot__frame"><img src="assets/img/degradado-medio.webp" width="640" height="640" loading="lazy" decoding="async" alt="Nuca con degradado medio y el pelo de arriba texturizado"></div><figcaption data-i18n="cap.mid">Degradado medio</figcaption></figure>
-        <figure class="shot"><div class="shot__frame"><img src="assets/img/corte-infantil-maquina.webp" width="1000" height="1331" loading="lazy" decoding="async" alt="Niño en el sillón mientras el barbero le pasa la máquina por la nuca"></div><figcaption data-i18n="cap.little">Los peques, con calma</figcaption></figure>
-        <figure class="shot"><div class="shot__frame"><img src="assets/img/degradado-nuca.webp" width="1000" height="1333" loading="lazy" decoding="async" alt="Cliente de espaldas frente al espejo con la nuca recién degradada"></div><figcaption data-i18n="cap.nape">Nuca limpia</figcaption></figure>
-        <figure class="shot"><div class="shot__frame"><img src="assets/img/en-el-espejo.webp" width="1000" height="1333" loading="lazy" decoding="async" alt="Cliente en el sillón visto de espaldas, reflejado en el espejo de la barbería"></div><figcaption data-i18n="cap.chair">En la silla</figcaption></figure>
-        <figure class="shot"><div class="shot__frame"><img src="assets/img/corte-infantil.webp" width="1000" height="1333" loading="lazy" decoding="async" alt="Barbero cortando el pelo a un niño con capa de rayas"></div><figcaption data-i18n="s.kids">Corte infantil</figcaption></figure>
+        <figure class="shot"><div class="shot__frame"><img src="assets/img/corte-infantil-maquina.webp" srcset="assets/img/corte-infantil-maquina-520.webp 520w, assets/img/corte-infantil-maquina.webp 1000w" sizes="(max-width: 760px) 46vw, (max-width: 1099px) 30vw, 400px" width="1000" height="1331" loading="lazy" decoding="async" alt="Niño en el sillón mientras el barbero le pasa la máquina por la nuca"></div><figcaption data-i18n="cap.little">Los peques, con calma</figcaption></figure>
+        <figure class="shot"><div class="shot__frame"><img src="assets/img/degradado-nuca.webp" srcset="assets/img/degradado-nuca-520.webp 520w, assets/img/degradado-nuca.webp 1000w" sizes="(max-width: 760px) 46vw, (max-width: 1099px) 30vw, 400px" width="1000" height="1333" loading="lazy" decoding="async" alt="Cliente de espaldas frente al espejo con la nuca recién degradada"></div><figcaption data-i18n="cap.nape">Nuca limpia</figcaption></figure>
+        <figure class="shot"><div class="shot__frame"><img src="assets/img/en-el-espejo.webp" srcset="assets/img/en-el-espejo-520.webp 520w, assets/img/en-el-espejo.webp 1000w" sizes="(max-width: 760px) 46vw, (max-width: 1099px) 30vw, 400px" width="1000" height="1333" loading="lazy" decoding="async" alt="Cliente en el sillón visto de espaldas, reflejado en el espejo de la barbería"></div><figcaption data-i18n="cap.chair">En la silla</figcaption></figure>
+        <figure class="shot"><div class="shot__frame"><img src="assets/img/corte-infantil.webp" srcset="assets/img/corte-infantil-520.webp 520w, assets/img/corte-infantil.webp 1000w" sizes="(max-width: 760px) 46vw, (max-width: 1099px) 30vw, 400px" width="1000" height="1333" loading="lazy" decoding="async" alt="Barbero cortando el pelo a un niño con capa de rayas"></div><figcaption data-i18n="s.kids">Corte infantil</figcaption></figure>
       </div>
       <div class="reels">
         <header class="reels__head reveal">
@@ -382,7 +378,7 @@
     <div class="wrap about">
       <div class="about__media reveal">
         <figure class="about__photo">
-          <img src="assets/img/local-hexagonos.webp" width="1350" height="1800" loading="lazy" decoding="async"
+          <img src="assets/img/local-hexagonos.webp" srcset="assets/img/local-hexagonos-760.webp 760w, assets/img/local-hexagonos.webp 1350w" sizes="(max-width: 1099px) 90vw, 480px" width="1350" height="1800" loading="lazy" decoding="async"
                alt="Interior de Momo's: techo con luces hexagonales, suelo de mármol negro y sillones de barbero">
         </figure>
         <svg class="seal" viewBox="0 0 200 200" aria-hidden="true" data-seal>
@@ -465,7 +461,7 @@
 
         <div class="closing__place reveal">
           <div class="map" data-map>
-            <img class="map__photo" src="assets/img/fachada-dia.webp" width="1600" height="1200" loading="lazy" decoding="async"
+            <img class="map__photo" src="assets/img/fachada-dia.webp" srcset="assets/img/fachada-dia-900.webp 900w, assets/img/fachada-dia.webp 1600w" sizes="(max-width: 1099px) 92vw, 480px" width="1600" height="1200" loading="lazy" decoding="async"
                  alt="Fachada de Momo's Barbershop: rótulo negro con el logo, puerta de cristal y el poste de barbero">
             <div class="map__overlay">
               <p class="map__hint" data-i18n="map.hint">Busca este escaparate.</p>
@@ -484,7 +480,7 @@
 <footer class="foot">
   <div class="wrap foot__inner">
     <div class="foot__brand">
-      <img src="assets/img/logo-momos.webp" alt="" width="56" height="56" loading="lazy">
+      <img src="assets/img/logo-momos-400.webp" alt="" width="56" height="56" loading="lazy">
       <p data-i18n="foot.tag"><strong>Momo's Barbershop</strong><br>Barbería masculina en Lloret de Mar</p>
     </div>
     <p class="foot__addr">C/ Josep Anselm Clavé, 16, local 3<br>17310 Lloret de Mar, Girona</p>
@@ -530,8 +526,8 @@
   </div>
 </div>
 
-<script defer src="aviso.js?v=20260928g"></script>
-<script defer src="i18n.js?v=20260928g"></script>
-<script defer src="main.js?v=20260928g"></script>
+<script defer src="aviso.js?v=20260928h"></script>
+<script defer src="i18n.js?v=20260928h"></script>
+<script defer src="main.js?v=20260928h"></script>
 </body>
 </html>

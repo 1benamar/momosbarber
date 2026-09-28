@@ -377,19 +377,6 @@ html.has-aviso .hero { padding-top: calc(var(--nav-h) + var(--aviso-h) + 16px); 
 .rating__txt { font: 700 .9rem var(--label); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 @media (hover: hover) and (pointer: fine) { .rating:hover .rating__txt { color: var(--cape); } }
 
-.hero__pause {
-  position: absolute; left: 50%; bottom: 34px; margin-left: -22px; z-index: 4;
-  width: 44px; height: 44px; display: grid; place-items: center;
-  background: rgba(15, 15, 17, .7); color: var(--cape);
-  border: 1px solid rgba(216, 182, 126, .6); border-radius: 50%; cursor: pointer;
-  transition: background-color 200ms ease, transform 160ms var(--ease-out);
-}
-.hero__pause:active { transform: scale(.94); }
-.hero__pause .ico { width: 18px; height: 18px; }
-.hero__pause .ico--play { display: none; }
-.hero__pause[aria-pressed="true"] .ico--play { display: block; }
-.hero__pause[aria-pressed="true"] .ico--pause { display: none; }
-@media (hover: hover) and (pointer: fine) { .hero__pause:hover { background: rgba(15, 15, 17, .92); } }
 
 /* ---------- Tira "corta por aquí" ---------- */
 .ticket {
@@ -789,7 +776,7 @@ html.js .shot figcaption { opacity: 0; transition: opacity 600ms ease, color 300
 html.js .shot.is-in .shot__frame { clip-path: inset(0 0 0 0); }
 html.js .shot.is-in figcaption { opacity: 1; }
 
-html.js .stamp-badge { opacity: 0; transform: rotate(-16deg) scale(1.25); animation: reveal-safety 1ms 6s forwards; }
+html.js .stamp-badge { opacity: 0; transform: rotate(-16deg) scale(1.25); animation: stamp-safety 1ms 6s forwards; }
 html.js .stamp-badge.is-in {
   opacity: 1; transform: rotate(-8deg) scale(1);
   transition: opacity 180ms ease, transform 420ms var(--ease-out);
@@ -804,6 +791,7 @@ html.js .stamp-badge.is-in {
 @keyframes live { 0% { box-shadow: 0 0 0 0 rgba(216, 182, 126, .55); } 70%, 100% { box-shadow: 0 0 0 12px rgba(216, 182, 126, 0); } }
 @keyframes pole { to { transform: translateX(67.88px); } }
 @keyframes reveal-safety { to { opacity: 1; transform: none; filter: none; } }
+@keyframes stamp-safety { to { opacity: 1; transform: rotate(-8deg); } }
 @keyframes unmask-safety { to { clip-path: inset(0 0 0 0); } }
 
 /* ---------- Responsive ---------- */
@@ -855,7 +843,6 @@ html.js .stamp-badge.is-in {
     content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--brass);
     animation: live 2.4s ease-out infinite;
   }
-  .hero__pause { top: calc(min(100svh, 820px) - 70px); bottom: auto; }
 
   .menu-card__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .fade-guide { grid-template-columns: 1fr; }
@@ -876,14 +863,13 @@ html.js .stamp-badge.is-in {
   .nav__word { font-size: 1.2rem; }
   .hero { padding: calc(var(--nav-h) + 8px) 8px 8px; }
   .hero__bill { grid-template-columns: 1fr; }
-  .hero__center { min-height: calc(100svh - var(--nav-h) - 24px); padding-block: 24px 88px; }
+  .hero__center { min-height: calc(100svh - var(--nav-h) - 24px); padding-block: 24px 40px; }
   .hero__media { height: 100svh; }
   .hero__logo { width: min(64vw, 280px); }
   .ribbon { font-size: .98rem; margin-inline: 30px; }
   .ribbon__text { padding-inline: 1em; }
   .hero__address { font-size: .88rem; letter-spacing: .14em; margin-top: 26px; }
   .hero__quick { flex-direction: column; align-items: stretch; width: min(100%, 340px); }
-  .hero__pause { top: calc(100svh - 74px); right: 20px; left: auto; margin-left: 0; }
   .panel--hours, .panel--book { grid-row: auto; border-left: 0; border-right: 0; border-top: var(--rule); }
   .panel--book { order: 2; }
   .panel--hours { order: 3; }
@@ -939,10 +925,23 @@ html.js .stamp-badge.is-in {
   .dock .btn { min-height: 52px; }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 400px) {
+  .nav__inner { gap: 8px; }
+  .nav__word { display: none; }
+  .nav__call, .nav__toggle, .lang { flex: none; }
+  .lang__btn { padding: 0 10px; }
+  .ribbon { font-size: .84rem; letter-spacing: .1em; margin-inline: 24px; white-space: nowrap; }
+  .ribbon__text { padding-inline: .8em; }
+  .hero__address { font-size: .8rem; letter-spacing: .1em; }
+  .hero__live { font-size: .85rem; letter-spacing: .08em; padding: 8px 10px; }
   .phone { font-size: 2.2rem; }
-  .fade-visual { grid-template-columns: auto 112px 96px; column-gap: 10px; }
-  .fade-bracket span { font-size: .74rem; }
+  .fade-guide > * { min-width: 0; }
+  .seg button { padding: 0 6px; font-size: .92rem; letter-spacing: .08em; }
+  .fade-visual { grid-template-columns: auto 96px 84px; column-gap: 8px; }
+  .fade-scale, .fade-swatch { height: 240px; }
+  .fade-bracket { width: 10px; }
+  .fade-bracket span { left: 16px; width: 64px; white-space: normal; line-height: 1.1; font-size: .7rem; }
+  .menu-list p { padding-right: 2.2em; }
 }
 
 /* ---------- Cursor de tijeras ---------- */
@@ -1029,4 +1028,33 @@ html.js .stamp-badge.is-in {
   .reels__head p { margin-inline: auto; }
   .reels__row { width: min(100%, 980px); }
   .reel figcaption { text-align: left; }
+}
+
+/* ---------- Tablet (761 a 1099 px) ---------- */
+@media (min-width: 761px) and (max-width: 1099px) {
+  .ticket__inner { grid-template-columns: 1fr auto; grid-template-areas: "status btn" "cut cut"; row-gap: 10px; }
+  .ticket__status { grid-area: status; }
+  .ticket .btn { grid-area: btn; }
+  .ticket__cut { grid-area: cut; }
+
+  .reviews__head {
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: "title title title title" "stamp . btn qr" "stamp . link qr";
+    align-items: center; justify-items: start; column-gap: 28px; row-gap: 14px;
+    padding-bottom: 36px; border-bottom: 5px double var(--red);
+  }
+  .reviews__head .h-display { grid-area: title; }
+  .stamp-badge { grid-area: stamp; width: 168px; }
+  .reviews__head .link-arrow { grid-area: link; white-space: nowrap; }
+  .review-cta { display: contents; }
+  .review-cta .btn { grid-area: btn; align-self: end; }
+  .review-qr { grid-area: qr; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+  .review-qr img { width: 92px; height: 92px; }
+  .review-qr figcaption { max-width: 14ch; font-size: .76rem; }
+
+  .about { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 56px; }
+  .about__media { max-width: none; margin-right: 28px; }
+  .seal { width: 136px; right: -34px; bottom: -40px; }
+  .about__text .h-display { font-size: clamp(2.2rem, 4.4vw, 3rem); }
+  .about__text p { font-size: 1.05rem; }
 }
