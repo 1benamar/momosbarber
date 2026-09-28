@@ -142,6 +142,8 @@
     var cur = 0, switching = false, userPaused = false, inView = true;
     var saveData = navigator.connection && navigator.connection.saveData;
 
+    // iOS/Android: el vídeo solo arranca solo si está silenciado también por JS
+    vids.forEach(function (v) { v.muted = true; v.defaultMuted = true; v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.setAttribute("webkit-playsinline", ""); });
     function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); return p; }
     function active() { return vids[cur]; }
 
@@ -184,7 +186,10 @@
     if (btn) btn.addEventListener("click", function () { setPaused(!userPaused); });
     onLang.push(function () { if (label) label.textContent = D(userPaused ? "play" : "pause"); });
 
-    if (saveData) { setPaused(true); }
+    // si el móvil bloquea el autoplay (ahorro de batería), arranca al primer toque o scroll
+    var kick = function () { if (!userPaused && active().paused) play(active()); };
+    ["touchstart", "pointerdown", "scroll"].forEach(function (ev) { window.addEventListener(ev, kick, { passive: true, once: true }); });
+    if (false && saveData) { setPaused(true); }
     else { play(vids[0]); }
 
     // si el navegador aplazó el autoplay (pestaña en segundo plano), lo retomamos
