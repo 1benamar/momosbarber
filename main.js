@@ -455,7 +455,7 @@
     safe(initNav, "nav");
     safe(initReveal, "reveal");
     safe(initScissors, "scissors");
-    safe(initSeal, "seal");
+    // el sello gira solo con CSS (animación en bucle)
     safe(initFade, "fade");
     safe(initMap, "map");
     safe(initDock, "dock");

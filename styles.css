@@ -643,7 +643,8 @@ html.has-aviso .hero { padding-top: calc(var(--nav-h) + var(--aviso-h) + 16px); 
 .seal__text { font: 800 13.2px var(--label); letter-spacing: 2.4px; fill: var(--cape); }
 .seal__word { font: 400 21px var(--logo); fill: var(--brass); }
 .seal__small { font: 700 8.4px var(--label); letter-spacing: 1.2px; fill: var(--cape); }
-.seal__spin { transform-box: view-box; transform-origin: 100px 100px; }
+.seal__spin { transform-box: view-box; transform-origin: 100px 100px; animation: seal-spin 22s linear infinite; }
+@keyframes seal-spin { to { transform: rotate(360deg); } }
 .about__text .h-display { font-size: clamp(2.4rem, 4vw, 4rem); margin-bottom: 28px; }
 .about__text p { font-size: 1.14rem; max-width: 54ch; color: rgba(15, 15, 17, .86); }
 .about__sign {
